@@ -7,7 +7,7 @@ This project demonstrates how to setup a wallet-based authentication flow compli
 
 This repository has multiple different examples showing how to implement this flow in different languages and backend frameworks.
 
-You can explore the setup and usage for each of these examples in the project specific folders:
+**You can explore the setup and usage for each of these examples in the project specific folders:**
 
 - [Login with Wallet Next](/tree/main/login-with-wallet-next) - Uses [Next.js](https://nextjs.org/) ([React](https://reactjs.org/) and [Express](https://expressjs.com/)) for both the frontend and backend.
 - [Login with Wallet Next Fiber](/tree/main/login-with-wallet-next-fiber) - Uses [Next.js](https://nextjs.com/) ([React](https://reactjs.org/)) for the frontend and a [Go Fiber](https://gofiber.io/) for the backend.

@@ -1,49 +1,46 @@
-## Login with Wallet
+## Login with Wallet Next Fiber
 
-This project demonstrates how to setup a wallet-based authentication flow compliant with the
-[sign-in with ethereum](https://eips.ethereum.org/EIPS/eip-4361) spec via the thirdweb SDK.
-
-It uses [Next.js](https://nextjs.org/) for both the backend and the frontend.
-
-It implements a backend endpoint with an admin wallet to generate and verify signatures as a form of authentication, and a react frontend to enable a user on the client side to connect and authenticate with their wallet.
-
+Here we implement the login with wallet flow using the [Next.js](https://nextjs.org/) and [Go Fiber](https://gofiber.io/) frameworks.
 ## Setup
 
-To run the project, first clone this repository, and then run one of the following commands to install the dependencies:
+To run the example, first clone this repository, and then `cd` into the `login-with-wallet-next-fiber` directory.
 
 ```bash
-npm install
-# or
-yarn install
+cd login-with-wallet-next
 ```
 
-Next, you need to create a `.env.local` file and add the `ADMIN_PRIVATE_KEY` variable to it with the private key of the wallet you want to use as the admin wallet to generate and verify payloads. Your file should use something like the following:
+Then run one of the following commands to install the JS dependencies into the `web` folder:
 
-```.env
+```bash
+cd web && npm install && cd ..
+# or
+cd web && yarn install && cd ..
+```
+
+We also need to install the Go dependencies for our backend, which we can do with the following command:
+
+```bash
+cd server && go get && cd ..
+```
+
+Next, you need to create a `.env` file in the `server` folder and add the `ADMIN_PRIVATE_KEY` variable to it (similar to how it is in the `/server/.env.example` file) with the private key of the wallet you want to use as the admin wallet to generate and verify payloads. Your file should use something like the following:
+
+```/server/.env
 ADMIN_PRIVATE_KEY=...
 ```
 
-Finally, you can run the project with one of the following commands:
+Now, we need to run the frontend and the backend separately.
+
+We can startup our frontend by running the following command in the root of the `login-with-next-fiber` directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
+make web
 ```
 
-Now, you can navigate to [http://localhost:3000](http://localhost:3000) to visit the client side page where you can connect a wallet, sign-in with ethereum and view the payload, and use the payload to authenticate with the backend.
+Finally, we can startup the backend in a separate terminal window by running the following command:
 
-## Learn More
+```bash
+make server
+```
 
-To learn more about thirdweb and Next.js, take a look at the following resources:
-
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/typescript) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com) - check our guides and development resources.
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+Now, the demo should be ready to use - and we can navigate to [`http://localhost:3000`](http://localhost:3000) to try it out.
