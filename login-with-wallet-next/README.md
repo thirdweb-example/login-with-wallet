@@ -1,46 +1,29 @@
-## Login with Wallet Next Fiber
+## Login with Wallet Next
 
-Here we implement the login with wallet flow using the [Next.js](https://nextjs.org/) and [Go Fiber](https://gofiber.io/) frameworks.
+Here we implement the login with wallet flow using the [Next.js](https://nextjs.org/) framework.
 ## Setup
 
-To run the example, first clone this repository, and then `cd` into the `login-with-wallet-next-fiber` directory.
+To run the project, first clone this repository, and then run one of the following commands to install the dependencies:
 
 ```bash
-cd login-with-wallet-next
-```
-
-Then run one of the following commands to install the JS dependencies into the `web` folder:
-
-```bash
-cd web && npm install && cd ..
+npm install
 # or
-cd web && yarn install && cd ..
+yarn install
 ```
 
-We also need to install the Go dependencies for our backend, which we can do with the following command:
+Next, you need to create a `.env.local` file and add the `ADMIN_PRIVATE_KEY` variable to it with the private key of the wallet you want to use as the admin wallet to generate and verify payloads. Your file should use something like the following:
 
-```bash
-cd server && go get && cd ..
-```
-
-Next, you need to create a `.env` file in the `server` folder and add the `ADMIN_PRIVATE_KEY` variable to it (similar to how it is in the `/server/.env.example` file) with the private key of the wallet you want to use as the admin wallet to generate and verify payloads. Your file should use something like the following:
-
-```/server/.env
+```.env
 ADMIN_PRIVATE_KEY=...
 ```
 
-Now, we need to run the frontend and the backend separately.
-
-We can startup our frontend by running the following command in the root of the `login-with-next-fiber` directory:
+Finally, you can run the project with one of the following commands:
 
 ```bash
-make web
+npm run dev
+# or
+yarn dev
 ```
 
-Finally, we can startup the backend in a separate terminal window by running the following command:
+Now, you can navigate to [http://localhost:3000](http://localhost:3000) to visit the client side page where you can connect a wallet, sign-in with ethereum and view the payload, and use the payload to authenticate with the backend.
 
-```bash
-make server
-```
-
-Now, the demo should be ready to use - and we can navigate to [`http://localhost:3000`](http://localhost:3000) to try it out.
