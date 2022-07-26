@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
@@ -90,12 +91,19 @@ func main() {
 		// Authenticate token with the SDK
 		domain := "thirdweb.com"
 		address, err := sdk.Auth.Authenticate(domain, token)
+		if err != nil {
+			return c.SendStatus(401)
+		}
 
 		return c.Status(200).JSON(address)
 	})
 
 	app.Post("/logout", func(c *fiber.Ctx) error {
-		c.ClearCookie("access_token")
+		c.Cookie(&fiber.Cookie{
+			Name:    "access_token",
+			Value:   "none",
+			Expires: time.Unix(time.Now().Unix()+5*1000, 0),
+		})
 		return c.SendStatus(200)
 	})
 
