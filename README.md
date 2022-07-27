@@ -11,6 +11,7 @@ This repository has multiple different examples showing how to implement this fl
 
 - [Login with Wallet Next](/tree/main/login-with-wallet-next) - Uses [Next.js](https://nextjs.org/) ([React](https://reactjs.org/) and [Express](https://expressjs.com/)) for both the frontend and backend.
 - [Login with Wallet Next Fiber](/tree/main/login-with-wallet-next-fiber) - Uses [Next.js](https://nextjs.com/) ([React](https://reactjs.org/)) for the frontend and a [Go Fiber](https://gofiber.io/) for the backend.
+- [Login with Wallet Next Flask](/tree/main/login-with-wallet-next-flask) - Uses [Next.js](https://nextjs.com/) ([React](https://reactjs.org/)) for the frontend and a [Flask](https://flask.palletsprojects.org/) for the backend.
 
 ## Learn More
 

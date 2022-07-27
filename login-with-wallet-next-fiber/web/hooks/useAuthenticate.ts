@@ -6,7 +6,6 @@ export default function useAuthenticate() {
 
   async function login() {
     const payload = await sdk?.auth.login(domain);
-    console.log(payload);
     await fetch("/api/login", {
       method: "POST",
       headers: {

@@ -6,7 +6,7 @@ Here we implement the login with wallet flow using the [Next.js](https://nextjs.
 To run the example, first clone this repository, and then `cd` into the `login-with-wallet-next-fiber` directory.
 
 ```bash
-cd login-with-wallet-next
+cd login-with-wallet-next-fiber
 ```
 
 Then run one of the following commands to install the JS dependencies into the `web` folder:
