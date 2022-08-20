@@ -21,7 +21,7 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
   const sdk = ThirdwebSDK.fromPrivateKey(process.env.ADMIN_PRIVATE_KEY as string, "mainnet");
   
   // Get signed login payload from the frontend
-  const payload = req.body.payload as LoginPayload;
+  const payload = req.body as LoginPayload;
   if (!payload) {
     return res.status(400).json({ 
       error: "Must provide a login payload to generate a token" 
